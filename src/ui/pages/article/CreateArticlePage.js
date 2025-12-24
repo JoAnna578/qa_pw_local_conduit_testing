@@ -1,14 +1,13 @@
 import { expect } from '../../../common/helpers/pw';
 import { BasePage } from '../BasePage';
 import { InternalHeader } from '../../components/header/InternalHeader';
-import { ROUTES } from '../../constants/pageRoutes';
 
 export class CreateArticlePage extends BasePage {
   constructor(page, userId = 0) {
     super(page, userId);
 
-    // URL strony korzysta z env
-    this._url = process.env.BASE_URL + ROUTES.articleEditor;
+    // URL strony edycji artykułu pobrany z env
+    this._url = process.env.ARTICLE_EDITOR_ROUTE;
 
     this.header = new InternalHeader(this.page, userId);
 
